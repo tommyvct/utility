@@ -18,6 +18,6 @@ function cdls([string]$dir)
 function md2html([string]$mdfile)
 {
     $htmlfile = $mdfile -replace "\.md$", ".html"
-    pandoc -s $mdfile -o $htmlfile
+    pandoc -s $mdfile -o $htmlfile -s --css=".\github.css"
     ii $htmlfile
 }
