@@ -14,3 +14,10 @@ function cdls([string]$dir)
     cd $dir
     ls
 }
+
+function md2html([string]$mdfile)
+{
+    $htmlfile = $mdfile -replace "\.md$", ".html"
+    pandoc -s $mdfile -o $htmlfile
+    ii $htmlfile
+}
